@@ -9,16 +9,24 @@ Walle 一个web部署系统工具，配置简单、功能完善、界面流畅�
 
 依赖
 ------------
- - composer
- - docker
- - php-cli
+ - php `apt-get install php5`
+ - curl `apt-get install curl`
+ - composer `curl -sS https://getcomposer.org/installer`
+ - docker `apt-get install docker.io`
+ - docker-compose  `http://get.daocloud.io/#install-compose`
+
 
 安装
 ------------
-```
-git clone https://github.com/leoMeee/walle-web-docker.git
-cd walle-web
-composer install --prefer-dist --no-dev --optimize-autoloader -vvvv
 
+    git clone https://github.com/leoMeee/walle-web-docker.git
+    cd walle-web-docker
+    composer install --prefer-dist --no-dev --optimize-autoloader -vvvv
+    docker-compose build
+    docker-compose up -d
+    docker exec -ti wallewebdocker_php_1 ./yii walle/setup --interactive=0
 
-
+登录
+-----------
+用户名:admin
+密码:admin
