@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y gettext-base libmcrypt-dev libicu-dev \
 
 COPY ./ /var/www/html
 
+RUN mkdir -p /data/www/deploy && chown -R www-data:www-data /data
+
 WORKDIR /var/www/html
 #RUN curl -sS https://getcomposer.org/installer | php \
 #      && mv composer.phar /usr/local/bin/composer \
